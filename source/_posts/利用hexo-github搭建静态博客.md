@@ -2,9 +2,10 @@
 title: 利用hexo+github搭建静态博客
 date: 2019-09-28 19:53:57
 categories:
- - 杂
+ - 备忘
 tags: 
  - hexo
+ - 博客
 ---
 
 # 从零开始搭建博客
