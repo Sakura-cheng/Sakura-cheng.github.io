@@ -23,22 +23,28 @@ my-venv是创建的虚拟环境的名字，可以自由修改，执行命令后�
 
 ### 激活虚拟环境
 在项目根目录下
-* windows:
-    ```
-    my-venv\scripts\activate
-    ```
-* linux:
-    ```
-    source my-venv/bin/activate
-    ```
-    或
-    ```
-    . my-venv/bin/activate
-    ```
+
+windows:
+```
+my-venv\scripts\activate
+```
+linux:
+```
+source my-venv/bin/activate
+```
+或
+```
+. my-venv/bin/activate
+```
 
 激活虚拟环境后能在命令行提示符前面看见当前虚拟环境的名字
 ```
 (my-venv) $
+```
+
+### 退出虚拟环境
+```
+(my-venv) $ deactivate
 ```
 
 ## 依赖的导出和导入
