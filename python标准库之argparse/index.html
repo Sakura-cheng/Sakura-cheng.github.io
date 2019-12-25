@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="hexo,博客,">
+  <meta name="keywords" content="python,argparse,">
 
 
 
@@ -82,18 +82,24 @@
 
 
 
-<meta name="description" content="从零开始搭建博客">
-<meta name="keywords" content="hexo,博客">
+<meta name="description" content="argparse是python的一个用于解析命令行的标准库">
+<meta name="keywords" content="python,argparse">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用hexo+github搭建静态博客">
-<meta property="og:url" content="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/index.html">
+<meta property="og:title" content="python标准库之argparse">
+<meta property="og:url" content="https://sakura-cheng.github.io/python标准库之argparse/index.html">
 <meta property="og:site_name" content="milulost&#39;s zone">
-<meta property="og:description" content="从零开始搭建博客">
+<meta property="og:description" content="argparse是python的一个用于解析命令行的标准库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-25T13:48:55.817Z">
+<meta property="og:image" content="https://sakura-cheng.github.io/python标准库之argparse/%E4%BB%80%E4%B9%88%E4%B9%9F%E4%B8%8D%E5%81%9A.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/python标准库之argparse/%E8%BE%93%E5%87%BA%E9%BB%98%E8%AE%A4%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/python标准库之argparse/%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C%E4%BC%9A%E6%8A%A5%E9%94%99.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/python标准库之argparse/%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/python标准库之argparse/%E4%B8%BA%E5%8F%82%E6%95%B0%E6%B7%BB%E5%8A%A0%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF.png">
+<meta property="og:updated_time" content="2019-12-25T15:21:42.100Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用hexo+github搭建静态博客">
-<meta name="twitter:description" content="从零开始搭建博客">
+<meta name="twitter:title" content="python标准库之argparse">
+<meta name="twitter:description" content="argparse是python的一个用于解析命令行的标准库">
+<meta name="twitter:image" content="https://sakura-cheng.github.io/python标准库之argparse/%E4%BB%80%E4%B9%88%E4%B9%9F%E4%B8%8D%E5%81%9A.png">
 
 
 
@@ -123,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/">
+  <link rel="canonical" href="https://sakura-cheng.github.io/python标准库之argparse/">
 
 
 
 
 
-  <title>利用hexo+github搭建静态博客 | milulost's zone</title>
+  <title>python标准库之argparse | milulost's zone</title>
   
 
 
@@ -256,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/">
+    <link itemprop="mainEntityOfPage" href="https://sakura-cheng.github.io/python标准库之argparse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="milulost">
@@ -273,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">利用hexo+github搭建静态博客</h1>
+          <h1 class="post-title" itemprop="name headline">python标准库之argparse</h1>
         
 
         <div class="post-meta">
@@ -285,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T19:53:57+08:00">
-                2019-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T22:00:26+08:00">
+                2019-12-25
               </time>
             
 
@@ -308,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/备忘/" itemprop="url" rel="index">
-                    <span itemprop="name">备忘</span>
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
                   </a>
                 </span>
 
@@ -350,38 +356,23 @@
       
 
       
-        <p>从零开始搭建博客</p>
+        <p>argparse是python的一个用于解析命令行的标准库</p>
 <a id="more"></a>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">下载node.js</a></p>
-<p>安装完成后会附带npm包管理器</p>
-<p>为了防止后续下载速度过慢，使用淘宝镜像</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="一个什么也没实现的例子"><a href="#一个什么也没实现的例子" class="headerlink" title="一个什么也没实现的例子"></a>一个什么也没实现的例子</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.parse_args()</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>上面这段代码如果直接执行什么也不做<br><img src="/python标准库之argparse/%E4%BB%80%E4%B9%88%E4%B9%9F%E4%B8%8D%E5%81%9A.png" alt="什么也不做"></p>
+<p>加上<code>--help</code>会输出默认的帮助信息<br><img src="/python标准库之argparse/%E8%BE%93%E5%87%BA%E9%BB%98%E8%AE%A4%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF.png" alt="输出默认帮助信息"></p>
+<h2 id="添加位置参数"><a href="#添加位置参数" class="headerlink" title="添加位置参数"></a>添加位置参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"test"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print(args.test)</span><br></pre></td></tr></table></figure>
 
-<h2 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h2><p>先创建一个blog文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init // 生成博客</span><br><span class="line">hexo s // 启动博客</span><br></pre></td></tr></table></figure>
+<p>上面的代码添加了一个命令行参数<code>test</code>，直接执行会报错<br><img src="/python标准库之argparse/%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C%E4%BC%9A%E6%8A%A5%E9%94%99.png" alt="直接执行会报错"></p>
+<p>带上参数执行会执行输出语句<br><img src="/python标准库之argparse/%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0.png" alt="输出参数"></p>
+<h2 id="为参数提供帮助信息"><a href="#为参数提供帮助信息" class="headerlink" title="为参数提供帮助信息"></a>为参数提供帮助信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"test"</span>, help=<span class="string">"测试添加一个参数"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print(args.test)</span><br></pre></td></tr></table></figure>
 
-<h2 id="写一篇博文"><a href="#写一篇博文" class="headerlink" title="写一篇博文"></a>写一篇博文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的第一篇文章&quot;</span><br></pre></td></tr></table></figure>
+<p>在添加参数时，指定<code>help</code>的内容可以给参数添加帮助信息，可通过<code>--help</code>查看<br><img src="/python标准库之argparse/%E4%B8%BA%E5%8F%82%E6%95%B0%E6%B7%BB%E5%8A%A0%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF.png" alt="为参数添加帮助信息"></p>
+<h2 id="指定参数类型"><a href="#指定参数类型" class="headerlink" title="指定参数类型"></a>指定参数类型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"number"</span>, help=<span class="string">"测试添加一个参数"</span>, type=int)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print(args.number + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
-<p>编写完一篇博文后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean // 清理缓存</span><br><span class="line">hexo g // 生成</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>修改blog目录下的_config.yml文件</p>
-<p>将_config.yml文件最底部修改为：  </p>
-<blockquote>
-<p>deploy:<br>&nbsp;&nbsp;&nbsp;&nbsp;type: git<br>&nbsp;&nbsp;&nbsp;&nbsp;repo: <a href="https://github.com/Sakura-cheng/Sakura-cheng.github.io.git" target="_blank" rel="noopener">https://github.com/Sakura-cheng/Sakura-cheng.github.io.git</a><br>&nbsp;&nbsp;&nbsp;&nbsp;branch: master</p>
-</blockquote>
-<h2 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>修改_config.yml文件中</p>
-<blockquote>
-<p>theme: next</p>
-</blockquote>
+<p>如果不给定<code>type</code>指定参数类型，默认是<code>str</code>类型</p>
+<h2 id="添加可选参数"><a href="#添加可选参数" class="headerlink" title="添加可选参数"></a>添加可选参数</h2><p>待续…</p>
 
       
     </div>
@@ -431,7 +422,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/" title="利用hexo+github搭建静态博客">https://sakura-cheng.github.io/利用hexo-github搭建静态博客/</a>
+    <a href="https://sakura-cheng.github.io/python标准库之argparse/" title="python标准库之argparse">https://sakura-cheng.github.io/python标准库之argparse/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -446,9 +437,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/argparse/" rel="tag"># argparse</a>
           
         </div>
       
@@ -461,15 +452,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/常见的排序算法/" rel="next" title="常见的排序算法">
+                <i class="fa fa-chevron-left"></i> 常见的排序算法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo博客的迁移/" rel="prev" title="hexo博客的迁移">
-                hexo博客的迁移 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -619,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node-js"><span class="nav-number">2.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成博客"><span class="nav-number">4.</span> <span class="nav-text">生成博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一篇博文"><span class="nav-number">5.</span> <span class="nav-text">写一篇博文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装部署插件"><span class="nav-number">6.</span> <span class="nav-text">安装部署插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置文件"><span class="nav-number">7.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到远端"><span class="nav-number">8.</span> <span class="nav-text">部署到远端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主题"><span class="nav-number">9.</span> <span class="nav-text">修改主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个什么也没实现的例子"><span class="nav-number">1.</span> <span class="nav-text">一个什么也没实现的例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加位置参数"><span class="nav-number">2.</span> <span class="nav-text">添加位置参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为参数提供帮助信息"><span class="nav-number">3.</span> <span class="nav-text">为参数提供帮助信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定参数类型"><span class="nav-number">4.</span> <span class="nav-text">指定参数类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加可选参数"><span class="nav-number">5.</span> <span class="nav-text">添加可选参数</span></a></li></ol></div>
             
 
           </div>
