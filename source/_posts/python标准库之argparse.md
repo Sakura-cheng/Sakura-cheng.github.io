@@ -66,4 +66,28 @@ print(args.number + 1)
 如果不给定`type`指定参数类型，默认是`str`类型
 
 ## 添加可选参数
-待续...
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--start", help="the start number", type=int)
+args = parser.parse_args()
+if args.start:
+    print(args.start + 1)
+```
+
+这里指定了一个可选参数`start`（缩写为`s`），若在执行时带上这个参数便会输出+1的值
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--start", help="print test", action="store_true")
+args = parser.parse_args()
+if args.start:
+    print('test')
+else:
+    print('nothing to do')
+```
+
+若添加`action="store_true"`，不需要带上参数值，便会执行相应的操作
