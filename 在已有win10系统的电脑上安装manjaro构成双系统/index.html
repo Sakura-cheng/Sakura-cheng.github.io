@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="hexo,博客,">
+  <meta name="keywords" content="manjaro,Linux,装系统,">
 
 
 
@@ -82,18 +82,26 @@
 
 
 
-<meta name="description" content="从零开始搭建博客">
-<meta name="keywords" content="hexo,博客">
+<meta name="description" content="记录一下在已有win10系统的电脑上安装manjaro构成双系统">
+<meta name="keywords" content="manjaro,Linux,装系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用hexo+github搭建静态博客">
-<meta property="og:url" content="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/index.html">
+<meta property="og:title" content="在已有win10系统的电脑上安装manjaro构成双系统">
+<meta property="og:url" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/index.html">
 <meta property="og:site_name" content="milulost&#39;s zone">
-<meta property="og:description" content="从零开始搭建博客">
+<meta property="og:description" content="记录一下在已有win10系统的电脑上安装manjaro构成双系统">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-25T13:48:55.817Z">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso1.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso2.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA1.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA2.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA3.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA4.png">
+<meta property="og:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA5.png">
+<meta property="og:updated_time" content="2020-02-28T09:55:57.039Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用hexo+github搭建静态博客">
-<meta name="twitter:description" content="从零开始搭建博客">
+<meta name="twitter:title" content="在已有win10系统的电脑上安装manjaro构成双系统">
+<meta name="twitter:description" content="记录一下在已有win10系统的电脑上安装manjaro构成双系统">
+<meta name="twitter:image" content="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso1.png">
 
 
 
@@ -123,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/">
+  <link rel="canonical" href="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/">
 
 
 
 
 
-  <title>利用hexo+github搭建静态博客 | milulost's zone</title>
+  <title>在已有win10系统的电脑上安装manjaro构成双系统 | milulost's zone</title>
   
 
 
@@ -256,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/">
+    <link itemprop="mainEntityOfPage" href="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="milulost">
@@ -273,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">利用hexo+github搭建静态博客</h1>
+          <h1 class="post-title" itemprop="name headline">在已有win10系统的电脑上安装manjaro构成双系统</h1>
         
 
         <div class="post-meta">
@@ -285,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T19:53:57+08:00">
-                2019-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-28T10:56:00+08:00">
+                2020-02-28
               </time>
             
 
@@ -350,38 +358,46 @@
       
 
       
-        <p>从零开始搭建博客</p>
+        <p>记录一下在已有win10系统的电脑上安装manjaro构成双系统</p>
 <a id="more"></a>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">下载node.js</a></p>
-<p>安装完成后会附带npm包管理器</p>
-<p>为了防止后续下载速度过慢，使用淘宝镜像</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="下载manjaro"><a href="#下载manjaro" class="headerlink" title="下载manjaro"></a>下载manjaro</h2><p>在<a href="https://manjaro.org/download/" target="_blank" rel="noopener">manjaro官网</a>下载manjaro，或使用<a href="https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/" target="_blank" rel="noopener">国内镜像</a>下载</p>
+<h2 id="创建u盘启动盘"><a href="#创建u盘启动盘" class="headerlink" title="创建u盘启动盘"></a>创建u盘启动盘</h2><p>需要一个空u盘，和<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="noopener">UItraISO工具</a>制作u盘启动盘</p>
+<ol>
+<li>文件-&gt;打开，选择下载好的iso文件</li>
+<li>启动-&gt;写入硬盘映像<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso1.png" alt="启动-&gt;写入硬盘映像1"></li>
+<li>选择准备好的空u盘，将写入方式设置为RAW（USB-HDD+方式对manjaro来说在安装时无法识别），点击写入，等待写入完成<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso2.png" alt="启动-&gt;写入硬盘映像2"></li>
+</ol>
+<p>这样，u盘启动盘就制作好了</p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>为了构成双系统，需要先将win10系统上分出一个空白分区</p>
+<ol>
+<li>右键”此电脑”，单击”管理”，选择”磁盘管理”<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA1.png" alt="分区1"></li>
+<li>右键选择需要压缩的磁盘，点击”压缩卷”，输入压缩空间量，点击”压缩”<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA2.png" alt="分区2"></li>
+<li>等待压缩完成后会出现一块未分配的磁盘空间，右键该区域，点击”新建简单卷”，其中需要输入”简单卷大小”，然后一路下一步，直到完成<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA3.png" alt="分区3"><br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA4.png" alt="分区4"><br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA5.png" alt="分区5"></li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="进入BIOS，修改启动项为u盘启动"><a href="#进入BIOS，修改启动项为u盘启动" class="headerlink" title="进入BIOS，修改启动项为u盘启动"></a>进入BIOS，修改启动项为u盘启动</h3><p>重启系统，进入BIOS，各个品牌的电脑进入BIOS的方式不同，请自行查询</p>
+<p>进入BIOS后，将secure boot关闭，在boot选项页中将u盘启动移至第一位，然后等待重启</p>
+<h3 id="manjaro的安装"><a href="#manjaro的安装" class="headerlink" title="manjaro的安装"></a>manjaro的安装</h3><p>根据提示安装即可，记得driver选择nonfree</p>
+<h2 id="安装后的配置"><a href="#安装后的配置" class="headerlink" title="安装后的配置"></a>安装后的配置</h2><h3 id="更新镜像源"><a href="#更新镜像源" class="headerlink" title="更新镜像源"></a>更新镜像源</h3><p><code>sudo pacman-mirrors -i -m rank -c China</code></p>
+<p>同步<code>sudo pacman -Syy</code></p>
+<p>更新系统<code>sudo pacman -Syyu</code></p>
+<p>使用root权限编辑<code>/etc/pacman.conf</code>增加以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server =https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>然后执行<code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h3 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h3><p><code>sudo pacman -S fcitx-im (#默认全部安装)</code></p>
+<p><code>sudo pacman -S fcitx-configtool</code></p>
+<p><code>sudo pacman -S fcitx-sogoupinyin (#安装搜狗拼音)</code></p>
+<p>添加配置文件<code>~/.xprofile</code>，输入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=&quot;@im=fcitx&quot;</span><br></pre></td></tr></table></figure>
 
-<h2 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h2><p>先创建一个blog文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init // 生成博客</span><br><span class="line">hexo s // 启动博客</span><br></pre></td></tr></table></figure>
-
-<h2 id="写一篇博文"><a href="#写一篇博文" class="headerlink" title="写一篇博文"></a>写一篇博文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的第一篇文章&quot;</span><br></pre></td></tr></table></figure>
-
-<p>编写完一篇博文后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean // 清理缓存</span><br><span class="line">hexo g // 生成</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>修改blog目录下的_config.yml文件</p>
-<p>将_config.yml文件最底部修改为：  </p>
-<blockquote>
-<p>deploy:<br>&nbsp;&nbsp;&nbsp;&nbsp;type: git<br>&nbsp;&nbsp;&nbsp;&nbsp;repo: <a href="https://github.com/Sakura-cheng/Sakura-cheng.github.io.git" target="_blank" rel="noopener">https://github.com/Sakura-cheng/Sakura-cheng.github.io.git</a><br>&nbsp;&nbsp;&nbsp;&nbsp;branch: master</p>
-</blockquote>
-<h2 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>修改_config.yml文件中</p>
-<blockquote>
-<p>theme: next</p>
-</blockquote>
+<p>重启</p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p><code>sudo pacman -S zsh</code></p>
+<p><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; # 下载并配置ohmyzsh</code></p>
+<p><code>chsh -s /bin/zsh  #更换默认bash，重启后生效</code></p>
+<h4 id="修改zsh主题"><a href="#修改zsh主题" class="headerlink" title="修改zsh主题"></a>修改zsh主题</h4><p>主题文件都存放在<code>~/.oh-my-zsh/themes</code>下，修改<code>~/.zshrc</code>配置文件中的：<code>ZSH_THEME=&quot;你想要的主题&quot;</code></p>
+<p>让配置文件生效：<code>source ~/.zshrc</code></p>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p><code>sudo pacman -S vim</code></p>
+<h3 id="AUR助手（以防官方仓库没有想要的软件）"><a href="#AUR助手（以防官方仓库没有想要的软件）" class="headerlink" title="AUR助手（以防官方仓库没有想要的软件）"></a>AUR助手（以防官方仓库没有想要的软件）</h3><p><code>sudo pacman -S yay</code></p>
 
       
     </div>
@@ -431,7 +447,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://sakura-cheng.github.io/利用hexo-github搭建静态博客/" title="利用hexo+github搭建静态博客">https://sakura-cheng.github.io/利用hexo-github搭建静态博客/</a>
+    <a href="https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/" title="在已有win10系统的电脑上安装manjaro构成双系统">https://sakura-cheng.github.io/在已有win10系统的电脑上安装manjaro构成双系统/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -446,9 +462,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/manjaro/" rel="tag"># manjaro</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/装系统/" rel="tag"># 装系统</a>
           
         </div>
       
@@ -461,15 +479,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/python标准库之argparse/" rel="next" title="python标准库之argparse">
+                <i class="fa fa-chevron-left"></i> python标准库之argparse
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo博客的迁移/" rel="prev" title="hexo博客的迁移">
-                hexo博客的迁移 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -619,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node-js"><span class="nav-number">2.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成博客"><span class="nav-number">4.</span> <span class="nav-text">生成博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一篇博文"><span class="nav-number">5.</span> <span class="nav-text">写一篇博文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装部署插件"><span class="nav-number">6.</span> <span class="nav-text">安装部署插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置文件"><span class="nav-number">7.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到远端"><span class="nav-number">8.</span> <span class="nav-text">部署到远端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主题"><span class="nav-number">9.</span> <span class="nav-text">修改主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载manjaro"><span class="nav-number">1.</span> <span class="nav-text">下载manjaro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建u盘启动盘"><span class="nav-number">2.</span> <span class="nav-text">创建u盘启动盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区"><span class="nav-number">3.</span> <span class="nav-text">分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入BIOS，修改启动项为u盘启动"><span class="nav-number">4.1.</span> <span class="nav-text">进入BIOS，修改启动项为u盘启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manjaro的安装"><span class="nav-number">4.2.</span> <span class="nav-text">manjaro的安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装后的配置"><span class="nav-number">5.</span> <span class="nav-text">安装后的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新镜像源"><span class="nav-number">5.1.</span> <span class="nav-text">更新镜像源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文输入法"><span class="nav-number">5.2.</span> <span class="nav-text">中文输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh"><span class="nav-number">5.3.</span> <span class="nav-text">zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改zsh主题"><span class="nav-number">5.3.1.</span> <span class="nav-text">修改zsh主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim"><span class="nav-number">5.4.</span> <span class="nav-text">vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AUR助手（以防官方仓库没有想要的软件）"><span class="nav-number">5.5.</span> <span class="nav-text">AUR助手（以防官方仓库没有想要的软件）</span></a></li></ol></li></ol></div>
             
 
           </div>
