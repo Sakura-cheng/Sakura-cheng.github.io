@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: milulost's zone
+title: 各种编译器
 subtitle:
 description: 路还长，别猖狂
 keywords:
-author: milulost
-language: zh-Hans
+author: 各种编译器
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
