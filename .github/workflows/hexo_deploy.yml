@@ -20,6 +20,7 @@ jobs:
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPOY_KEY }}
         run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
           mkdir -p ~/.ssh/
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
