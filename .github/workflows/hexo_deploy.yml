@@ -18,7 +18,7 @@ jobs:
           node-version: '12'
       - name: setup hexo
         env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPOY_KEY }}
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
           sudo timedatectl set-timezone "Asia/Shanghai"
           mkdir -p ~/.ssh/
