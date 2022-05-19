@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="路还长，别猖狂">
+  <meta name="author" content="各种编译器">
+  <meta name="keywords" content>
+  <title>在已有win10系统的电脑上安装manjaro构成双系统 - 各种编译器</title>
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css">
+  <link rel="stylesheet" href="/lib/hint/hint.min.css">
+
+  
+    
+    
+      
+      <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css">
+    
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"sakura-cheng.github.io","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/color-schema.js"></script>
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>各种编译器</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="在已有win10系统的电脑上安装manjaro构成双系统">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-28 10:56" pubdate>
+        2020年2月28日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      591 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">在已有win10系统的电脑上安装manjaro构成双系统</h1>
+            
+            <div class="markdown-body">
+              <p>记录一下在已有win10系统的电脑上安装manjaro构成双系统</p>
+<a id="more"></a>
+<h2 id="下载manjaro"><a href="#下载manjaro" class="headerlink" title="下载manjaro"></a>下载manjaro</h2><p>在<a href="https://manjaro.org/download/" target="_blank" rel="noopener">manjaro官网</a>下载manjaro，或使用<a href="https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/" target="_blank" rel="noopener">国内镜像</a>下载</p>
+<h2 id="创建u盘启动盘"><a href="#创建u盘启动盘" class="headerlink" title="创建u盘启动盘"></a>创建u盘启动盘</h2><p>需要一个空u盘，和<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="noopener">UItraISO工具</a>制作u盘启动盘</p>
+<ol>
+<li>文件-&gt;打开，选择下载好的iso文件</li>
+<li>启动-&gt;写入硬盘映像<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso1.png" alt="启动-&gt;写入硬盘映像1"></li>
+<li>选择准备好的空u盘，将写入方式设置为RAW（USB-HDD+方式对manjaro来说在安装时无法识别），点击写入，等待写入完成<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/UItraIso2.png" alt="启动-&gt;写入硬盘映像2"></li>
+</ol>
+<p>这样，u盘启动盘就制作好了</p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>为了构成双系统，需要先将win10系统上分出一个空白分区</p>
+<ol>
+<li>右键”此电脑”，单击”管理”，选择”磁盘管理”<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA1.png" alt="分区1"></li>
+<li>右键选择需要压缩的磁盘，点击”压缩卷”，输入压缩空间量，点击”压缩”<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA2.png" alt="分区2"></li>
+<li>等待压缩完成后会出现一块未分配的磁盘空间，右键该区域，点击”新建简单卷”，其中需要输入”简单卷大小”，然后一路下一步，直到完成<br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA3.png" alt="分区3"><br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA4.png" alt="分区4"><br><img src="/在已有win10系统的电脑上安装manjaro构成双系统/%E5%88%86%E5%8C%BA5.png" alt="分区5"></li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="进入BIOS，修改启动项为u盘启动"><a href="#进入BIOS，修改启动项为u盘启动" class="headerlink" title="进入BIOS，修改启动项为u盘启动"></a>进入BIOS，修改启动项为u盘启动</h3><p>重启系统，进入BIOS，各个品牌的电脑进入BIOS的方式不同，请自行查询</p>
+<p>进入BIOS后，将secure boot关闭，在boot选项页中将u盘启动移至第一位，然后等待重启</p>
+<h3 id="manjaro的安装"><a href="#manjaro的安装" class="headerlink" title="manjaro的安装"></a>manjaro的安装</h3><p>根据提示安装即可，记得driver选择nonfree</p>
+<h2 id="安装后的配置"><a href="#安装后的配置" class="headerlink" title="安装后的配置"></a>安装后的配置</h2><h3 id="更新镜像源"><a href="#更新镜像源" class="headerlink" title="更新镜像源"></a>更新镜像源</h3><p><code>sudo pacman-mirrors -i -m rank -c China</code></p>
+<p>同步<code>sudo pacman -Syy</code></p>
+<p>更新系统<code>sudo pacman -Syyu</code></p>
+<p>使用root权限编辑<code>/etc/pacman.conf</code>增加以下内容</p>
+<pre><code class="hljs undefined"><span class="hljs-section">[archlinuxcn]</span>
+<span class="hljs-attr">SigLevel</span> = Optional TrustedOnly
+<span class="hljs-attr">Server</span> =https://mirrors.ustc.edu.cn/archlinuxcn/<span class="hljs-variable">$arch</span></code></pre>
+
+<p>然后执行<code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h3 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h3><p><code>sudo pacman -S fcitx-im (#默认全部安装)</code></p>
+<p><code>sudo pacman -S fcitx-configtool</code></p>
+<p><code>sudo pacman -S fcitx-sogoupinyin (#安装搜狗拼音)</code></p>
+<p>添加配置文件<code>~/.xprofile</code>，输入以下内容</p>
+<pre><code class="hljs undefined"><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">GTK_IM_MODULE</span>=fcitx
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">QT_IM_MODULE</span>=fcitx
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">XMODIFIERS</span>=<span class="hljs-string">"@im=fcitx"</span></code></pre>
+
+<p>重启</p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p><code>sudo pacman -S zsh</code></p>
+<p><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; # 下载并配置ohmyzsh</code></p>
+<p><code>chsh -s /bin/zsh  #更换默认bash，重启后生效</code></p>
+<h4 id="修改zsh主题"><a href="#修改zsh主题" class="headerlink" title="修改zsh主题"></a>修改zsh主题</h4><p>主题文件都存放在<code>~/.oh-my-zsh/themes</code>下，修改<code>~/.zshrc</code>配置文件中的：<code>ZSH_THEME=&quot;你想要的主题&quot;</code></p>
+<p>让配置文件生效：<code>source ~/.zshrc</code></p>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p><code>sudo pacman -S vim</code></p>
+<h3 id="AUR助手（以防官方仓库没有想要的软件）"><a href="#AUR助手（以防官方仓库没有想要的软件）" class="headerlink" title="AUR助手（以防官方仓库没有想要的软件）"></a>AUR助手（以防官方仓库没有想要的软件）</h3><p><code>sudo pacman -S yay</code></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/备忘/">备忘</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/manjaro/">manjaro</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/装系统/">装系统</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/深入理解Java虚拟机第2章笔记/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">深入理解Java虚拟机第2章笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/python标准库之argparse/">
+                        <span class="hidden-mobile">python标准库之argparse</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
